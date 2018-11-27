@@ -12,6 +12,7 @@ while($row = mysqli_fetch_assoc($res))
 	
 $results = array(
 	'title' => 'Категории' , 
-	'content'=>$categories
+	'categories'=>$categories
 );
+
 ?>
