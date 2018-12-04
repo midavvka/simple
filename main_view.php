@@ -22,10 +22,15 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <?php 
-            var_dump($results);
+            // var_dump($results);
             foreach ($results['categories'] as $item) {
-              echo " <li class=\"nav-item \"><!-- active -->
-                    <a class=\"nav-link\" href=\"#\">
+              if($_GET['catid']==$item['id'])
+                $active='active';
+              else
+                $active='';
+              echo " <li class=\"nav-item $active\"><!-- active -->
+                    <a class=\"nav-link\" 
+                    href=\"?catid={$item['id']}\">
                     {$item['name']}
                     </a>
                     </li>";
@@ -51,9 +56,16 @@
 
         <!--Grid row-->
         <div class="row wow fadeIn">
-
-        <?php include 'grid_column.php'; ?>
-
+          <?php 
+          // Вывод товаров
+          if($results['goods'])
+            foreach ($results['goods'] as $item) {
+                include 'grid_column.php';
+            }
+          else
+            echo "<p> <h2>В данной категории пока нет товаров...</h2></p>";
+          ?>
+      
         </div>
         <!--Grid row-->
 
