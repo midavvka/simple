@@ -1,5 +1,7 @@
 ﻿<?php 
 //Зачения по умолчанию
+//https://github.com/midavvka/simple
+
 $model_name = 'Main';
 
 if(!empty($_GET['model']))
