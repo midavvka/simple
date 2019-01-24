@@ -1,4 +1,5 @@
 <?php include 'header.php'; ?>
+<!-- good_view.php -->
 
   <!--Main layout-->
   <main class="mt-5 pt-4" style="flex: auto">
@@ -23,25 +24,28 @@
 
             <div class="mb-3">
               <a href="">
-                <span class="badge blue mr-1">Мужские валенки</span>
+                <span class="badge blue mr-1"><?php echo $results['good']['cname'];?></span>
               </a>
             </div>
 
             <p class="lead">
               <span class="mr-1">
-                <del>3000 р.</del>
+                <del><?php echo $results['good']['price'] + 1000;?> р.</del>
               </span>
-              <span>2000 р.</span>
+              <span><?php echo $results['good']['price'];?> р.</span>
             </p>
 
-            <p class="lead font-weight-bold">Классические валенки</p>
+            <p class="lead font-weight-bold"><?php echo $results['good']['name'];?></p>
 
-            <p>Валенки — это традиционная русская обувь, которую в морозную погоду носят для ходьбы по сухому снегу. Снашиваются быстрее всего снизу, для борьбы с чем часто подшиваются кожей или иным прочным материалом; с этой же целью и против намокания носятся с гало́шами. Традиционно валенки бывают чёрного, серого, и белого цвета.</p>
+            <p>
+              <?php echo $results['good']['description'];?>
+            </p>
 
-            <form class="d-flex justify-content-left">
+            <form action="?model=good&id=<?php echo $results['good']['id'];?>" 
+            class="d-flex justify-content-left" method="POST">
               <!-- Default input -->
-              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-              <button class="btn btn-primary btn-md my-0 p" type="submit">Добавить в корзину
+              <input name="count" type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+              <button name="cart" class="btn btn-primary btn-md my-0 p" type="submit">Добавить в корзину
                 <i class="fa fa-shopping-cart ml-1"></i>
               </button>
 

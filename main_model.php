@@ -1,9 +1,7 @@
 <?php 
-//Подключение к БД
-$mysqli = mysqli_connect("localhost", "root", "", "myshop");
-// Пропущена обработка ошибок
-//Кодировка подключения
-mysqli_set_charset($mysqli,'utf8');
+//main_model.php
+
+include 'db.php';
 // Запрос всех категорий
 $res = mysqli_query($mysqli, "SELECT * FROM `categories`");
 // Формирование результатов

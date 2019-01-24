@@ -1,5 +1,8 @@
 <?php 
+// good_model.php
 // id товара
+
+
 if(!empty($_GET['id']))
 {
 	$id = (int)$_GET['id'];
@@ -16,12 +19,18 @@ if(!empty($_GET['id']))
 	`categories`.`name` AS `cname` 
 	FROM `goods`,`categories` 
 	WHERE `goods`.`cat_id`=`categories`.`id`
-	AND `categories`.`id` = $id
+	AND `goods`.`id` = $id
 	";
 
 	$res = mysqli_query($mysqli, $SQLgoods);
 	
 	$good = mysqli_fetch_assoc($res);
+	// print_r($good);
+
+
+
+	
+
 }
 
 $results = array(

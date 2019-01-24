@@ -83,8 +83,8 @@
         <!-- Right -->
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a class="nav-link waves-effect">
-              <span class="badge red z-depth-1 mr-1"> 1 </span>
+            <a href="?model=cart" class="nav-link waves-effect">
+              <span class="badge red z-depth-1 mr-1"> <?php echo $cart_count;?> </span>
               <i class="fa fa-shopping-cart"></i>
               <span class="clearfix d-none d-sm-inline-block"> Корзина </span>
             </a>
